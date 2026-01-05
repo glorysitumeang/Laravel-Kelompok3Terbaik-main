@@ -3,58 +3,41 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Profil; 
+use Illuminate\View\View;
 use App\Models\Berita;
 
 class GuestController extends Controller
 {
-    public function home()
+    public function home(): View
     {
-        // Mengambil 3 berita terbaru untuk ditampilkan di halaman depan
-        $beritas = Berita::latest()->take(3)->get();
-        return view('welcome', compact('beritas')); 
+        return view('guest.home');
     }
 
-    public function profil()
+    public function profil(): View
     {
-        // Mengambil data profil pertama dari database
-        $profil = Profil::first(); 
-        
-        if (!$profil) {
-            $profil = (object)[
-                'sejarah' => 'Data sejarah belum diisi di Admin.',
-                'visi' => 'Visi belum ada.',
-                'misi' => 'Misi belum ada.'
-            ];
-        }
-        
-        return view('profil', compact('profil')); 
+        return view('guest.profil');
     }
 
-    public function berita()
+    public function berita(): View
     {
-        // Mengambil semua berita untuk halaman daftar berita
+        // ambil data berita (kalau ada)
         $beritas = Berita::latest()->get();
-        return view('berita', compact('beritas')); 
+
+        return view('guest.berita', compact('beritas'));
     }
 
-    public function kontak()
+    public function pengumuman(): View
     {
-        return view('kontak'); 
+        return view('guest.pengumuman');
     }
 
-    public function pengumuman() 
-    { 
-        return view('pengumuman'); 
+    public function galeri(): View
+    {
+        return view('guest.galeri');
     }
 
-    // INI MODIFIKASI GALERI YANG KAU MINTA
-    public function galeri() 
-    { 
-        // Mengambil data berita yang HANYA punya gambar untuk dijadikan galeri dokumentasi
-        // Filter 'whereNotNull' memastikan galeri tidak kosong atau menampilkan gambar rusak
-        $galeri = Berita::whereNotNull('gambar')->latest()->get(); 
-        
-        return view('galeri', compact('galeri')); 
+    public function kontak(): View
+    {
+        return view('guest.kontak');
     }
 }
