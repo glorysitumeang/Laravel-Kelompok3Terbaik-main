@@ -10,34 +10,37 @@ class GuestController extends Controller
 {
     public function home(): View
     {
-        return view('guest.home');
+    
+        return view('welcome');
     }
 
     public function profil(): View
     {
-        return view('guest.profil');
+    
+        return view('profil');
     }
 
     public function berita(): View
     {
-        // ambil data berita (kalau ada)
         $beritas = Berita::latest()->get();
-
-        return view('guest.berita', compact('beritas'));
+    
+        return view('berita', compact('beritas'));
     }
 
     public function pengumuman(): View
     {
-        return view('guest.pengumuman');
+        
+        return view('pengumuman');
     }
 
     public function galeri(): View
     {
-        return view('guest.galeri');
+       
+        return view('galeri');
     }
 
     public function kontak(): View
     {
-        return view('guest.kontak');
+        return view('kontak');
     }
 }
