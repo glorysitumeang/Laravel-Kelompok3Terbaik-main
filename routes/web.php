@@ -10,7 +10,7 @@ use App\Http\Controllers\ProfileController;
 // --- JALUR GUEST / PUBLIC ---
 Route::get('/', [GuestController::class, 'home'])->name('home');
 Route::get('/profil', [GuestController::class, 'profil'])->name('profil');
-Route::get('/berita', [GuestController::class, 'berita'])->name('berita'); 
+Route::get('/berita', [GuestController::class, 'berita'])->name('berita');
 Route::get('/pengumuman', [GuestController::class, 'pengumuman'])->name('pengumuman');
 Route::get('/galeri', [GuestController::class, 'galeri'])->name('galeri');
 Route::get('/kontak', [GuestController::class, 'kontak'])->name('kontak');

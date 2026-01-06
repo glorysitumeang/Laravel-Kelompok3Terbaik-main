@@ -34,7 +34,7 @@
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
                 <li class="nav-item"><a class="nav-link" href="/profil">Profil Desa</a></li>
-                <li class="nav-item"><a class="nav-link" href="/berita">Berita</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('berita') }}">Berita</a></li>
                 <li class="nav-item"><a class="nav-link" href="/pengumuman">Pengumuman</a></li>
                 <li class="nav-item"><a class="nav-link" href="/galeri">Galeri</a></li>
                 <li class="nav-item"><a class="nav-link" href="/kontak">Kontak</a></li>
@@ -52,7 +52,7 @@
 <footer class="text-center">
     <div class="container">
         <p class="mb-0">
-            © {{ date('Y') }} Website Desa | Dibuat oleh Kelompok tukimin
+            © {{ date('Y') }} Website Desa | Dibuat oleh Kelompok 3 terbaik
         </p>
     </div>
 </footer>
